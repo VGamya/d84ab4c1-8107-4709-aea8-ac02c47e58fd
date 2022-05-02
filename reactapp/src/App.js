@@ -1,5 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
+import Order from './components/Order';
+ import React from "react";
+import Header from './components/Header';
+ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import PostForm from './components/PostForm';
 
 function App() {
   return (
@@ -22,4 +27,22 @@ function App() {
   );
 }
 
+const App = ()=>{
+  return(
+    <div>
+          <div><Header></Header></div>
+    <Router> 
+    <Routes>
+    <Route exact path="/" element={<PostForm/>} />
+    {/* <Route path="/orders" element={<Order />} /> */}
+    </Routes>
+    </Router>
+    </div>
+      
+  )
+
+}
+
 export default App;
+
+
